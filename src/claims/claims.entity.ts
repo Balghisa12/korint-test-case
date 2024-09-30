@@ -21,7 +21,7 @@ export class Claims {
   @Column()
   value: number;
 
-  @ManyToOne(() => User, (user) => user.claims)
+  @ManyToOne(() => User, (user) => user.claims, { onDelete: 'CASCADE' })
   @JoinTable()
   users: User;
 }

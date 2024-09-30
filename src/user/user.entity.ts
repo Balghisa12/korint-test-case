@@ -12,6 +12,6 @@ export class User {
   @Column()
   name: string;
 
-  @OneToMany(() => Claims, (claims) => claims.users)
+  @OneToMany(() => Claims, (claims) => claims.users, { cascade: true })
   claims: Claims[];
 }
